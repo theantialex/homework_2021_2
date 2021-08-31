@@ -6,4 +6,5 @@
  * @returns {string} - compressed string
  */
 
-const rle = input => input.length ? input.match(/(.)\1*/g).map(elem =>  elem.length == 1 ? elem[0] : elem[0] + elem.length).join('') : '';
+const rle = input => typeof input == 'string' && input.length ? 
+    input.match(/(.)\1*/g).map(elem =>  elem.length === 1 ? elem[0] : elem[0] + elem.length).join('') : '';
